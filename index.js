@@ -39,7 +39,7 @@ class SimpleGarageDoorOpener {
   }
 
   setupGarageDoorOpenerService (service) {
-    rpio.open(this.doorSwitchPin, rpio.OUTPUT, rpio.LOW);
+    rpio.open(this.doorSwitchPin, rpio.OUTPUT, rpio.HIGH);
 
     this.service.setCharacteristic(Characteristic.TargetDoorState, Characteristic.TargetDoorState.CLOSED);
     this.service.setCharacteristic(Characteristic.CurrentDoorState, Characteristic.CurrentDoorState.CLOSED);
@@ -73,9 +73,9 @@ class SimpleGarageDoorOpener {
   }
 
   openGarageDoor (callback) {
-    rpio.write(this.doorSwitchPin, rpio.HIGH);
-    rpio.sleep(0.5);
     rpio.write(this.doorSwitchPin, rpio.LOW);
+    rpio.sleep(0.5);
+    rpio.write(this.doorSwitchPin, rpio.HIGH);
 
     this.log('Opening the garage door for...');
     this.simulateGarageDoorOpening();

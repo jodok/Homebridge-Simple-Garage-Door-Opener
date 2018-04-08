@@ -1,5 +1,7 @@
 # Simple Garage Door Opener
 
+copied from https://github.com/danielreiser/Homebridge-Simple-Garage-Door-Opener, but inverted the GPIO output state.
+
 [![npm version](https://badge.fury.io/js/homebridge-simple-garage-door-opener.svg)](https://badge.fury.io/js/homebridge-simple-garage-door-opener)
 
 A Homebridge Plugin for controlling your garage door via your iOS device.
